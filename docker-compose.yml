@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: bodhi-booking-backend  # ✅ custom name
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8001
+    volumes:
+      - .:/app 
+      - static-volume:/app/Bodhi_BookNow/static
+      - media-volume:/app/media
+    ports:
+      - "8001:8001"
+    depends_on:
+      - db
+    env_file:
+      - .env.db
+
+  db:
+    container_name: bodhi-booking-db  # ✅ custom name
+    image: postgres:16
+    restart: always
+    env_file:
+      - ./.env.db
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
+  static-volume:
+  media-volume:

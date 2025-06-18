@@ -1,0 +1,12 @@
+django-environ
+Django
+# mysqlclient
+djangorestframework-simplejwt
+djangorestframework
+gunicorn
+celery
+redis
+django-filter
+psycopg2-binary
+twilio
+pillow
