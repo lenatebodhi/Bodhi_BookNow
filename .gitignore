@@ -1,32 +1,19 @@
-# Python
+# Python cache and logs
 *.pyc
 *.log
-*.env
 __pycache__/
+**/__pycache__/
+
+# Environment files and secrets
+.env
+.env.*
+.env.db
+
+# Virtual environments
 venv/
 .venv/
 env/
-db.sqlite3
-dump.rdb
-.venv
-venv
 
-*.pyc
-*.log
-*.env
-.venv
-venv
-env
-.env.db
-**__pycache__
-
-*.pyc
-*.log
-*.env
-.venv
-venv
-env
-.env.db
-**__pycache__
+# Database & Redis dump files
 db.sqlite3
 dump.rdb
